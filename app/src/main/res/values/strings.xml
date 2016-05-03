@@ -5,4 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="menu_TODO">TODO</string>
+
+    <string name="btn_back1">Back</string>
+    <string name="btn_next1">Next</string>
+
 </resources>
