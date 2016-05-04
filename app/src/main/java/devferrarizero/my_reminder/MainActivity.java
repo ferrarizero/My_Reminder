@@ -27,9 +27,8 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddingActivity1.class);
+                Intent intent = new Intent(MainActivity.this, AddingActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -81,9 +80,9 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.menu_TODO) {
+        if (id == R.id.menu_calendar) {
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.menu_TODO) {
 
         } else if (id == R.id.nav_slideshow) {
 
