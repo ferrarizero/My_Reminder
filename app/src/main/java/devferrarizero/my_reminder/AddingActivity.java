@@ -57,8 +57,20 @@ public class AddingActivity extends AppCompatActivity implements View.OnClickLis
             builder.show();
         }*/
         if (id == R.id.btn_back1) {
-            Intent intent = new Intent(AddingActivity.this, MainActivity.class);
-            startActivity(intent);
+            /*Intent intent = new Intent(AddingActivity.this, MainActivity.class);
+            startActivity(intent);*/
+            Cursor cursor = database.query(DBHelper.TABLE_CONTACTS, null, null, null, null, null, null);
+
+            if (cursor.moveToFirst()) {
+                int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
+                int todoIndex = cursor.getColumnIndex(DBHelper.KEY_TODO);
+                do {
+                    Log.d("my_logs", "ID = " + cursor.getInt(idIndex) +
+                            ", todo = " + cursor.getString(todoIndex));
+                } while (cursor.moveToNext());
+            } else
+                Log.d("my_logs","0 rows");
+            cursor.close();
         } else if (id == R.id.btn_add1) {
             cv.put(DBHelper.KEY_DATE, MainActivity.selectedDate);
             cv.put(DBHelper.KEY_HOUR, timePicker.getHour());
